@@ -1,0 +1,35 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "rpy-node",
+    "namespace": "default",
+    "selfLink": "/api/v1/namespaces/default/services/rpy-node",
+    "uid": "b6c6e156-4ede-11e9-8d01-080027003269",
+    "resourceVersion": "21132",
+    "creationTimestamp": "2019-03-25T09:16:46Z",
+    "labels": {
+      "run": "rpy-node"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 80,
+        "targetPort": 80,
+        "nodePort": 30303
+      }
+    ],
+    "selector": {
+      "run": "rpy-node"
+    },
+    "clusterIP": "10.97.235.15",
+    "type": "NodePort",
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}
